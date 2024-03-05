@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj66p1vss178w"]
+
+[ext_resource type="PackedScene" uid="uid://bd88816rhdef3" path="res://Scenes/player.tscn" id="1_36dmo"]
+[ext_resource type="Texture2D" uid="uid://cc0nhyb1m3p4w" path="res://Assets/light.png" id="2_e38bu"]
+[ext_resource type="Texture2D" uid="uid://bpycqui5braqg" path="res://Assets/tilesPlaceholder.png" id="3_lfhdl"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="4_qeddd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjo1q"]
+texture = ExtResource("3_lfhdl")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_jpctl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gjo1q")
+
+[node name="World" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_jpctl")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 65536, 0, 65535, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 131072, 65536, 0, 0, 65536, 0, -65536, 65536, 0, 1, 65536, 0, 65537, 65536, 0, 131073, 65536, 0, -65535, 65536, 0, -131071, 65536, 0, -196607, 65536, 0, -196608, 65536, 0, -131073, 65536, 0, -131074, 65536, 0, -65538, 65536, 0, -2, 65536, 0, 65534, 65536, 0, 131070, 65536, 0, 196607, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, -131072, 65536, 0, 196606, 65536, 0, -65537, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 131080, 65536, 0, 65544, 65536, 0, 65543, 65536, 0, 7, 65536, 0, -65529, 65536, 0, -131065, 65536, 0, -196601, 65536, 0, -196602, 65536, 0, -196603, 65536, 0, -262139, 65536, 0, -262140, 65536, 0, -262141, 65536, 0, -262142, 65536, 0, -262143, 65536, 0, -262144, 65536, 0, -131075, 65536, 0, -65539, 65536, 0, -65540, 65536, 0, -4, 65536, 0, 65532, 65536, 0, 131068, 65536, 0, 196604, 65536, 0, 196605, 65536, 0, 262141, 65536, 0, 262142, 65536, 0, 327679, 65536, 0, 262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 131078, 65536, 0, 65542, 65536, 0, 6, 65536, 0, -65530, 65536, 0, -131066, 65536, 0, -131067, 65536, 0, -196604, 65536, 0, -196605, 65536, 0, -196606, 65536, 0, -3, 65536, 0, 131069, 65536, 0, 65533, 65536, 0, 2, 65536, 0, -65533, 65536, 0, -131069, 65536, 0, -131068, 65536, 0, 65538, 65536, 0, 131074, 65536, 0, -65534, 65536, 0, -131070, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 65540, 65536, 0, 5, 65536, 0, 4, 65536, 0, -65532, 65536, 0, 3, 65536, 0, 65539, 65536, 0, -65531, 65536, 0, 65541, 65536, 0, 131077, 65536, 0, 131079, 65536, 0, 327682, 0, 0, 327681, 0, 0, 327680, 0, 0, 393215, 0, 0, 327683, 0, 0, 327678, 0, 0, 327677, 0, 0, 262140, 0, 0, 196603, 0, 0, 131067, 0, 0, 65531, 0, 0, -5, 0, 0, -65541, 0, 0, -131076, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -262138, 0, 0, -262137, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 8, 0, 0, 131081, 0, 0, 196617, 0, 0, 65545, 0, 0, 9, 0, 0, 262151, 0, 0, 327686, 0, 0, 262152, 0, 0, 393221, 0, 0, 393220, 0, 0, 393219, 0, 0, 393218, 0, 0, 393217, 0, 0, 393216, 0, 0, 458751, 0, 0, 393214, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_36dmo")]
+scale = Vector2(0.1, 0.1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+texture = ExtResource("2_e38bu")
+texture_scale = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+script = ExtResource("4_qeddd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
