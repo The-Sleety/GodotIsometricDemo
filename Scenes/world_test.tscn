@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfg64b7smyyhn"]
+[gd_scene load_steps=8 format=3 uid="uid://cfg64b7smyyhn"]
 
 [ext_resource type="FontFile" uid="uid://dejs38nj1b5eg" path="res://Assets/DungeonFont.ttf" id="1_jho5m"]
 [ext_resource type="Texture2D" uid="uid://cv1i1l4peyl88" path="res://Assets/Isometric-SpriteSheet.png" id="1_yvnvq"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8w8ck"]
 [ext_resource type="PackedScene" uid="uid://lf4l0mdihsso" path="res://Scenes/Player.tscn" id="2_myhhu"]
+[ext_resource type="PackedScene" uid="uid://32p8gmqr53g1" path="res://Scenes/cspookyscaryskeleton.tscn" id="5_4loeh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51d0r"]
 texture = ExtResource("1_yvnvq")
@@ -44,6 +45,15 @@ theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
 text = "Health : "
 
+[node name="Speed" type="Label" parent="CanvasLayer"]
+offset_left = 101.0
+offset_top = 297.0
+offset_right = 210.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("1_jho5m")
+theme_override_font_sizes/font_size = 33
+text = "sPEED : "
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_15avu")
@@ -59,3 +69,6 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_8w8ck")
 
 [node name="Player" parent="." instance=ExtResource("2_myhhu")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_4loeh")]
+position = Vector2(234, -101)
