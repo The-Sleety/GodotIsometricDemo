@@ -13,7 +13,13 @@ config_version=5
 config/name="IsometricDemo"
 run/main_scene="res://Scenes/world_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 

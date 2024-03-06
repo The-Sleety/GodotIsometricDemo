@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lf4l0mdihsso"]
+[gd_scene load_steps=5 format=3 uid="uid://lf4l0mdihsso"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_e55tr"]
 [ext_resource type="Texture2D" uid="uid://b85noi361il05" path="res://icon.svg" id="2_g8pab"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_3iq0a"]
-[ext_resource type="Texture2D" uid="uid://c16jynb2liwro" path="res://Assets/light.png" id="4_8f3po"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kvdi"]
 size = Vector2(133.333, 33.3333)
@@ -24,8 +23,3 @@ shape = SubResource("RectangleShape2D_0kvdi")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("3_3iq0a")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-texture = ExtResource("4_8f3po")
-texture_scale = 7.0

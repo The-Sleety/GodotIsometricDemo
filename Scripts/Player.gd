@@ -1,16 +1,31 @@
 extends CharacterBody2D
 
-const speed = 100
-const acceleration = 2000
-const friction = 450
+class_name Player
+
+@export_category("Texts and onreadies")
+@onready var healtText = $"../CanvasLayer/Healt"
+
+@export_category("Movement")
+@export var speed = 100
+@export var acceleration = 2000
+@export var friction = 450
+
+@export_category("Stats")
+@export var healt = 100
+@export var protection = 0
+@export var baseDamage = 0
+var is_dead = false
+var can_move = true
 
 var input = Vector2.ZERO
-#var screen_size = get_viewport_rect().size
+
+func _process(delta):
+	healtText.text = "Healt : " + str(healt)
 
 func _physics_process(delta):
 	player_movement(delta)
 
-func cartesian_to_isometric(cartesian):
+func cartesian_to_isometric(cartesian): 
 	var screen_pos = Vector2()
 	screen_pos.x = cartesian.x - cartesian.y
 	screen_pos.y = (cartesian.x + cartesian.y) /2
@@ -35,5 +50,13 @@ func player_movement(delta):
 		
 		velocity += cartesian_to_isometric(input * acceleration * delta)
 	move_and_slide()
-			
-		
+	
+	
+func GetDamaged():
+	if healt != 0:
+		healt -= 5
+	if healt == 0:
+		die()
+
+func die():
+	queue_free()
