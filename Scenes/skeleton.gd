@@ -2,16 +2,16 @@ extends CharacterBody2D
 
 @onready var anim = $"Animated Sprite"
 @onready var take_damage_timer = $TakeDamageTimer
+@onready var player = $"../Player"
 
 
 
 @export var speed : float = 50
-@export var health = 100
-var damage = 10
+@export var health : float = 100
+var damage : float = 3.5
 
 var dead = false 
 var player_in_area = false
-var player 
 var player_in_attack_range = false
 var can_take_damage = true
 
@@ -41,7 +41,7 @@ func _physics_process(delta):
 func deal_with_damage():
 	if player_in_attack_range and Global.player_attacking == true:
 		if can_take_damage == true:
-			health = health - 15
+			health = health - player.baseDamage
 			take_damage_timer.start()
 			can_take_damage = false
 			print("MR SKELLY BONES healt: ", health)

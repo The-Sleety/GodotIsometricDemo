@@ -10,7 +10,7 @@ class_name Player
 @onready var speedText = $"../CanvasLayer/Speed"
 @onready var deal_attack_timer = $DealAttackTimer
 @onready var playerhitboxshape = $PlayerHitbox/CollisionShape2D
-
+@onready var skeleton = $"../Skeleton"
 
 @export_category("Movement")
 @export var speed = 100
@@ -19,15 +19,16 @@ class_name Player
 @export var friction = 450
 
 @export_category("Stats")
-@export var healt : int = 100
+@export var healt : float = 100
 @export var protection : float = 0
-@export var baseDamage  : int = 0
+@export var baseDamage  : float = 5.5
 var is_dead = false
 var can_move = true
 var is_running : bool = true
 var attack_ip = false
 
 #enemy vars
+var enemy = null
 var enemy_in_attack_range = false
 var enemy_attack_cooldown = true
 
@@ -86,7 +87,8 @@ func get_input():
 
 func enemyAttack():
 	if enemy_in_attack_range and enemy_attack_cooldown == true:
-		healt = healt - 10
+		healt = healt - enemy.damage
+		healt += protection / 2
 		enemy_attack_cooldown = false
 		cooldown_timer.start( )
 		print(healt)
@@ -102,9 +104,11 @@ func die():
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_in_attack_range = true
+		enemy = body
  
 func _on_player_hitbox_body_exited(body):
 	enemy_in_attack_range = false
+	enemy = null
 	
 func _on_cooldown_timer_timeout():
 	enemy_attack_cooldown = true
