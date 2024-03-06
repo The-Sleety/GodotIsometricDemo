@@ -17,6 +17,7 @@ class_name Player
 @export var runSpeed = 120
 @export var acceleration = 2000
 @export var friction = 450
+@export var stamina = 100
 
 @export_category("Stats")
 @export var healt : float = 100

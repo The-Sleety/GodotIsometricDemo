@@ -378,6 +378,7 @@ y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_e55tr")
 runSpeed = 130
+baseDamage = 3.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
