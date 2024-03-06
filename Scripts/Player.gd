@@ -9,6 +9,7 @@ class_name Player
 @onready var player_sprite = $Sprite2D
 @onready var speedText = $"../CanvasLayer/Speed"
 @onready var deal_attack_timer = $DealAttackTimer
+@onready var playerhitboxshape = $PlayerHitbox/CollisionShape2D
 
 
 @export_category("Movement")
@@ -57,9 +58,11 @@ func get_input():
 		speed = 100
 		
 	if Input.is_action_just_pressed("Attack"):
+		print(	"attacking")
 		Global.player_attacking = true
 		attack_ip = true
 		deal_attack_timer.start()
+		anim.play("attack")
 		
 	#Animation thingies
 	if input_direction.x == -1:
@@ -77,12 +80,13 @@ func get_input():
 	if velocity == Vector2(0, 0):
 		if attack_ip == false:
 			anim.play("idle")
+			
 	move_and_slide()
 
 
 func enemyAttack():
 	if enemy_in_attack_range and enemy_attack_cooldown == true:
-		healt = healt - randi_range(5, 20)
+		healt = healt - 10
 		enemy_attack_cooldown = false
 		cooldown_timer.start( )
 		print(healt)
@@ -105,6 +109,6 @@ func _on_player_hitbox_body_exited(body):
 func _on_cooldown_timer_timeout():
 	enemy_attack_cooldown = true
 
-
 func _on_deal_attack_timer_timeout():
+	deal_attack_timer.stop()
 	Global.player_attacking = false

@@ -243,7 +243,7 @@ radius = 106.005
 [sub_resource type="CircleShape2D" id="CircleShape2D_f67r4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhexq"]
-radius = 23.0
+radius = 29.0
 
 [node name="SpookyScarySkeleton" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_1g2mp")
@@ -268,7 +268,10 @@ shape = SubResource("CircleShape2D_f67r4")
 position = Vector2(5, 2)
 shape = SubResource("CircleShape2D_hhexq")
 
+[node name="TakeDamageTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="TakeDamageTimer" to="." method="_on_take_damage_timer_timeout"]
