@@ -8,6 +8,7 @@ class_name Player
 @onready var anim = $AnimationPlayer
 @onready var player_sprite = $Sprite2D
 @onready var speedText = $"../CanvasLayer/Speed"
+@onready var deal_attack_timer = $DealAttackTimer
 
 
 @export_category("Movement")
@@ -23,6 +24,11 @@ class_name Player
 var is_dead = false
 var can_move = true
 var is_running : bool = true
+var attack_ip = false
+
+#enemy vars
+var enemy_in_attack_range = false
+var enemy_attack_cooldown = true
 
 var input = Vector2.ZERO
 
@@ -35,7 +41,11 @@ func _process(delta):
 	
 
 func _physics_process(delta):
+	enemyAttack()
 	get_input()
+	
+	if healt <= 0:
+		die()
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -45,6 +55,13 @@ func get_input():
 		speed = runSpeed
 	else:
 		speed = 100
+		
+	if Input.is_action_just_pressed("Attack"):
+		Global.player_attacking = true
+		attack_ip = true
+		deal_attack_timer.start()
+		
+	#Animation thingies
 	if input_direction.x == -1:
 		anim.play("walk")
 		player_sprite.flip_h = false
@@ -57,10 +74,37 @@ func get_input():
 	if input_direction.y == 1:
 		anim.play("walk")
 		player_sprite.flip_h = false
+	if velocity == Vector2(0, 0):
+		if attack_ip == false:
+			anim.play("idle")
 	move_and_slide()
 
 
-	
+func enemyAttack():
+	if enemy_in_attack_range and enemy_attack_cooldown == true:
+		healt = healt - randi_range(5, 20)
+		enemy_attack_cooldown = false
+		cooldown_timer.start( )
+		print(healt)
+
 func die():
+	healt  = 0
 	queue_free()
+
+
+
+#-------!!DANGER SIGNAL ZONE!!-------
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_in_attack_range = true
+ 
+func _on_player_hitbox_body_exited(body):
+	enemy_in_attack_range = false
 	
+func _on_cooldown_timer_timeout():
+	enemy_attack_cooldown = true
+
+
+func _on_deal_attack_timer_timeout():
+	Global.player_attacking = false
