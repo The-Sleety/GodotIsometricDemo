@@ -299,7 +299,8 @@ tracks/6/keys = {
 "values": [Vector2(0.333333, 1.16667)]
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3mujj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0px2r"]
+size = Vector2(16, 29.3333)
 
 [sub_resource type="Animation" id="Animation_40itj"]
 resource_name = "attack"
@@ -375,7 +376,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("CircleShape2D_3mujj")]
+"values": [SubResource("RectangleShape2D_0px2r")]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -387,7 +388,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-10.6667, 0)]
+"values": [Vector2(-1, 1.66667)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6jqgk"]
