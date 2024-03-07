@@ -241,6 +241,7 @@ animations = [{
 radius = 106.005
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f67r4"]
+radius = 8.0
 
 [node name="SpookyScarySkeleton" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_i41m2")

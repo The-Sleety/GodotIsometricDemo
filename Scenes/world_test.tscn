@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfg64b7smyyhn"]
+[gd_scene load_steps=6 format=3 uid="uid://cfg64b7smyyhn"]
 
 [ext_resource type="FontFile" uid="uid://dejs38nj1b5eg" path="res://Assets/DungeonFont.ttf" id="1_jho5m"]
 [ext_resource type="PackedScene" uid="uid://butwhrj2g3aky" path="res://normal.tscn" id="2_js4po"]
 [ext_resource type="PackedScene" uid="uid://lf4l0mdihsso" path="res://Scenes/Player.tscn" id="2_myhhu"]
 [ext_resource type="PackedScene" uid="uid://32p8gmqr53g1" path="res://Scenes/cspookyscaryskeleton.tscn" id="5_4loeh"]
+[ext_resource type="PackedScene" uid="uid://bh67k2k6ounrd" path="res://Scenes/goblin.tscn" id="5_5r1ps"]
 
 [node name="WorldTest" type="Node2D"]
 
@@ -43,10 +44,10 @@ visible = true
 protection = 10.0
 
 [node name="Skeleton" parent="." instance=ExtResource("5_4loeh")]
-position = Vector2(234, -101)
+position = Vector2(523, -224)
 
 [node name="SpookyScarySkeleton" parent="." instance=ExtResource("5_4loeh")]
-position = Vector2(633, -248)
+position = Vector2(729, -403)
 
-[node name="SpookyScarySkeleton2" parent="." instance=ExtResource("5_4loeh")]
-position = Vector2(-108, -104)
+[node name="Goblin" parent="." instance=ExtResource("5_5r1ps")]
+position = Vector2(232, -128)
