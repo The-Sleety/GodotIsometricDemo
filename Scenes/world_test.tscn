@@ -10,27 +10,43 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Healt" type="Label" parent="CanvasLayer"]
-offset_left = 101.0
-offset_top = 256.0
-offset_right = 210.0
-offset_bottom = 290.0
+offset_left = 38.0
+offset_top = 44.0
+offset_right = 147.0
+offset_bottom = 78.0
 theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
 text = "Health : "
 
 [node name="Speed" type="Label" parent="CanvasLayer"]
-offset_left = 101.0
-offset_top = 297.0
-offset_right = 210.0
-offset_bottom = 331.0
+offset_left = 38.0
+offset_top = 85.0
+offset_right = 147.0
+offset_bottom = 119.0
 theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
-text = "sPEED : "
+text = "Speed : "
+
+[node name="Stamina" type="Label" parent="CanvasLayer"]
+offset_left = 38.0
+offset_top = 125.0
+offset_right = 160.0
+offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("1_jho5m")
+theme_override_font_sizes/font_size = 33
+text = "Stamina : "
 
 [node name="TileMap" parent="." instance=ExtResource("2_js4po")]
 visible = true
 
 [node name="Player" parent="." instance=ExtResource("2_myhhu")]
+protection = 10.0
 
 [node name="Skeleton" parent="." instance=ExtResource("5_4loeh")]
 position = Vector2(234, -101)
+
+[node name="SpookyScarySkeleton" parent="." instance=ExtResource("5_4loeh")]
+position = Vector2(633, -248)
+
+[node name="SpookyScarySkeleton2" parent="." instance=ExtResource("5_4loeh")]
+position = Vector2(-108, -104)

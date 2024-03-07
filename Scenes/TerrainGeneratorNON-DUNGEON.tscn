@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwkkdc48yf0c3"]
 
 [ext_resource type="Texture2D" uid="uid://cv1i1l4peyl88" path="res://Assets/Isometric-SpriteSheet.png" id="1_uaa43"]
-[ext_resource type="Script" path="res://Scenes/Generator.gd" id="2_nnljh"]
+[ext_resource type="Script" path="res://Scripts/Generator.gd" id="2_nnljh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51d0r"]
 texture = ExtResource("1_uaa43")

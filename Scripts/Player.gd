@@ -11,13 +11,14 @@ class_name Player
 @onready var deal_attack_timer = $DealAttackTimer
 @onready var playerhitboxshape = $PlayerHitbox/CollisionShape2D
 @onready var skeleton = $"../Skeleton"
+@onready var staminaText = $"../CanvasLayer/Stamina"
 
 @export_category("Movement")
 @export var speed = 100
 @export var runSpeed = 120
 @export var acceleration = 2000
 @export var friction = 450
-@export var stamina = 100
+@export var stamina = 1000
 
 @export_category("Stats")
 @export var healt : float = 100
@@ -25,7 +26,8 @@ class_name Player
 @export var baseDamage  : float = 5.5
 var is_dead = false
 var can_move = true
-var is_running : bool = true
+var is_running : bool = false
+var can_run : bool = true
 var attack_ip = false
 
 #enemy vars
@@ -41,30 +43,33 @@ func _ready():
 func _process(delta):
 	healtText.text = "Healt : " + str(healt)
 	speedText.text = "Speed : " + str(speed)
+	staminaText.text = "Stamina : " + str(stamina)
 	
 
 func _physics_process(delta):
-	enemyAttack()
 	get_input()
 	
 	if healt <= 0:
+		can_move = false
 		die()
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
-	if Input.is_action_pressed("run"):
+	
+	#runnning
+	if can_run and Input.is_action_pressed("run"):
 		is_running = true
 		speed = runSpeed
+		if is_running == true:
+			stamina -= 1
+			if stamina <= 0:
+				stamina = 0
+				can_run = false
 	else:
 		speed = 100
-		
-	if Input.is_action_just_pressed("Attack"):
-		print(	"attacking")
-		Global.player_attacking = true
-		attack_ip = true
-		deal_attack_timer.start()
-		anim.play("attack")
+		is_running = false
+
 		
 	#Animation thingies
 	if input_direction.x == -1:
@@ -86,14 +91,6 @@ func get_input():
 	move_and_slide()
 
 
-func enemyAttack():
-	if enemy_in_attack_range and enemy_attack_cooldown == true:
-		healt = healt - enemy.damage
-		healt += protection / 2
-		enemy_attack_cooldown = false
-		cooldown_timer.start( )
-		print(healt)
-
 func die():
 	healt  = 0
 	queue_free()
@@ -102,18 +99,3 @@ func die():
 
 #-------!!DANGER SIGNAL ZONE!!-------
 
-func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy"):
-		enemy_in_attack_range = true
-		enemy = body
- 
-func _on_player_hitbox_body_exited(body):
-	enemy_in_attack_range = false
-	enemy = null
-	
-func _on_cooldown_timer_timeout():
-	enemy_attack_cooldown = true
-
-func _on_deal_attack_timer_timeout():
-	deal_attack_timer.stop()
-	Global.player_attacking = false
