@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 
-@export var speed : float = 50
+@export var speed : float = 40
 @export var health : float = 100
 var damage : float = 3.5
 

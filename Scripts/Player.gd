@@ -16,7 +16,6 @@ class_name Player
 @export_category("Movement")
 @export var speed = 100
 @export var runSpeed = 120
-@export var acceleration = 2000
 @export var friction = 450
 @export var stamina = 1000
 
@@ -94,7 +93,6 @@ func get_input():
 func die():
 	healt  = 0
 	queue_free()
-
 
 
 #-------!!DANGER SIGNAL ZONE!!-------

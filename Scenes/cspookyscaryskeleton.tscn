@@ -240,10 +240,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yoa2j"]
 radius = 106.005
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f67r4"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc82q"]
+height = 52.0
 
 [node name="SpookyScarySkeleton" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 3
 script = ExtResource("1_i41m2")
 
 [node name="Animated Sprite" type="AnimatedSprite2D" parent="."]
@@ -257,8 +258,8 @@ frame_progress = 0.808706
 shape = SubResource("CircleShape2D_yoa2j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 17)
-shape = SubResource("CircleShape2D_f67r4")
+position = Vector2(5, 0)
+shape = SubResource("CapsuleShape2D_bc82q")
 
 [node name="TakeDamageTimer" type="Timer" parent="."]
 wait_time = 0.5

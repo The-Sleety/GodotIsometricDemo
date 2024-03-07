@@ -6,9 +6,9 @@ extends CharacterBody2D
 
 
 
-@export var speed : float = 50
+@export var speed : float = 60
 @export var health : float = 100
-var damage : float = 3.5
+@export var damage : float = 3.5
 
 var dead = false 
 var player_in_area = false
