@@ -1,9 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://lf4l0mdihsso"]
+[gd_scene load_steps=20 format=3 uid="uid://lf4l0mdihsso"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_e55tr"]
+[ext_resource type="Script" path="res://Scripts/inventory/Hotbar.gd" id="2_5t7gn"]
 [ext_resource type="Texture2D" uid="uid://dqv11gu57ws4e" path="res://Assets/Player/_side idle.png" id="2_lxhyq"]
+[ext_resource type="PackedScene" uid="uid://dcdbjj73c24ss" path="res://Scenes/Inv/slot.tscn" id="2_o2di2"]
+[ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="2_tgoj4"]
+[ext_resource type="Texture2D" uid="uid://ddl4ffm0l87sq" path="res://Assets/healtProgress.png" id="3_gqb2j"]
+[ext_resource type="Script" path="res://Scripts/Health.gd" id="3_ibb3l"]
 [ext_resource type="Texture2D" uid="uid://bq7sefpxtxwnm" path="res://Assets/Player/_side attack.png" id="4_1wpn6"]
 [ext_resource type="Texture2D" uid="uid://cnddoxvttlwsp" path="res://Assets/Player/_side walk.png" id="4_jyvry"]
+[ext_resource type="Texture2D" uid="uid://blgxg014637so" path="res://Assets/stamina.png" id="5_gimwn"]
+[ext_resource type="Script" path="res://Scripts/Stamina.gd" id="5_hj1dj"]
+[ext_resource type="Script" path="res://Scripts/inventory/Weapon.gd" id="7_fwu5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kvdi"]
 size = Vector2(9.33333, 5.33332)
@@ -273,13 +281,71 @@ _data = {
 "walk": SubResource("Animation_pg5jk")
 }
 
+[sub_resource type="Curve" id="Curve_sjjr8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.340659), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_e55tr")
+Item_obj = ExtResource("2_tgoj4")
 runSpeed = 130
 baseDamage = 3.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Health" type="TextureProgressBar" parent="UI"]
+offset_left = 31.0
+offset_top = 17.0
+offset_right = 421.0
+offset_bottom = 38.0
+max_value = 1000.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("3_gqb2j")
+texture_progress = ExtResource("3_gqb2j")
+tint_under = Color(0.368627, 0.368627, 0.368627, 1)
+script = ExtResource("3_ibb3l")
+
+[node name="Stamina" type="TextureProgressBar" parent="UI"]
+offset_left = 32.0
+offset_top = 61.0
+offset_right = 422.0
+offset_bottom = 82.0
+max_value = 1000.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("5_gimwn")
+texture_progress = ExtResource("5_gimwn")
+tint_under = Color(0.368627, 0.368627, 0.368627, 1)
+script = ExtResource("5_hj1dj")
+
+[node name="Hotbar" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -611.0
+offset_top = -100.0
+offset_right = -475.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.3, 2.3)
+theme_override_constants/separation = 20
+script = ExtResource("2_5t7gn")
+
+[node name="Slot" parent="UI/Hotbar" instance=ExtResource("2_o2di2")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/Hotbar" instance=ExtResource("2_o2di2")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Hotbar" instance=ExtResource("2_o2di2")]
+layout_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
@@ -299,3 +365,21 @@ libraries = {
 "": SubResource("AnimationLibrary_6jqgk")
 }
 speed_scale = 0.6
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 960
+amount = 200
+lifetime = 3.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(1280, 720)
+spread = 10.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_sjjr8")
+
+[node name="Weapon" type="Node2D" parent="."]
+script = ExtResource("7_fwu5d")

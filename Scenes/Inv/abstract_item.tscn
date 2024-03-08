@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ufngcydl0hm6"]
+
+[ext_resource type="Script" path="res://Scripts/inventory/AbstractItem.gd" id="1_t53o8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3a1a8"]
+
+[node name="AbstractItem" type="Sprite2D"]
+script = ExtResource("1_t53o8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3a1a8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]

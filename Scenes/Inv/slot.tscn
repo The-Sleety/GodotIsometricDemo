@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcdbjj73c24ss"]
+
+[ext_resource type="Script" path="res://Scripts/inventory/Slot.gd" id="1_ydix5"]
+
+[node name="Slot" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 1
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_ydix5")

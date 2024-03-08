@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bdubvr4gyjecp"]
+
+[ext_resource type="Texture2D" uid="uid://bruewv6xr1g10" path="res://Assets/Single_Tiles/Blue_Bottle_3.png" id="1_10flv"]
+[ext_resource type="Script" path="res://Scripts/inventory/item.gd" id="1_jauxg"]
+
+[resource]
+script = ExtResource("1_jauxg")
+icon = ExtResource("1_10flv")
+name = "Stamina Potion"
+type = "Consumable"
+restoreHealt = 1.0
+description = "Restores your stamina"

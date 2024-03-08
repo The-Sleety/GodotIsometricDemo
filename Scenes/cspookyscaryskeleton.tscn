@@ -261,9 +261,5 @@ shape = SubResource("CircleShape2D_yoa2j")
 position = Vector2(5, 0)
 shape = SubResource("CapsuleShape2D_bc82q")
 
-[node name="TakeDamageTimer" type="Timer" parent="."]
-wait_time = 0.5
-
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
-[connection signal="timeout" from="TakeDamageTimer" to="." method="_on_take_damage_timer_timeout"]

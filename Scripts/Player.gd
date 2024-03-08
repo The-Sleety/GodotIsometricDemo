@@ -4,23 +4,26 @@ class_name Player
 
 @export_category("Texts and onreadies")
 @onready var healtText = $"../CanvasLayer/Healt"
-@onready var cooldown_timer = $CooldownTimer
 @onready var anim = $AnimationPlayer
 @onready var player_sprite = $Sprite2D
 @onready var speedText = $"../CanvasLayer/Speed"
-@onready var deal_attack_timer = $DealAttackTimer
-@onready var playerhitboxshape = $PlayerHitbox/CollisionShape2D
 @onready var skeleton = $"../Skeleton"
 @onready var staminaText = $"../CanvasLayer/Stamina"
+@onready var hotbar = $UI/Hotbar
+
+@export var Item_obj : PackedScene
 
 @export_category("Movement")
 @export var speed = 100
 @export var runSpeed = 120
 @export var friction = 450
-@export var stamina = 1000
 
 @export_category("Stats")
+@export var maxStamina = 1000
+@export var stamina = 1000
+@export var maxHealth :float = 100
 @export var healt : float = 100
+@export var maxProtection : float = 100
 @export var protection : float = 0
 @export var baseDamage  : float = 5.5
 var is_dead = false
@@ -39,13 +42,13 @@ var input = Vector2.ZERO
 func _ready():
 	anim.play("idle")
 
-func _process(delta):
+func _process(_delta):
 	healtText.text = "Healt : " + str(healt)
 	speedText.text = "Speed : " + str(speed)
 	staminaText.text = "Stamina : " + str(stamina)
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	
 	if healt <= 0:
@@ -54,7 +57,7 @@ func _physics_process(delta):
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	velocity = input_direction * speed 
 	
 	#runnning
 	if can_run and Input.is_action_pressed("run"):
@@ -89,6 +92,10 @@ func get_input():
 			
 	move_and_slide()
 
+
+
+func add_item(stats,skill):
+	hotbar.add_item(stats,skill)
 
 func die():
 	healt  = 0

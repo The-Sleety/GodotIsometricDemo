@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b0dwgum16ecif"]
+
+[ext_resource type="Texture2D" uid="uid://bsh1skt386180" path="res://Assets/Single_Tiles/Greatsword_2.png" id="1_nydq3"]
+[ext_resource type="Script" path="res://Scripts/inventory/item.gd" id="1_sklbp"]
+
+[resource]
+script = ExtResource("1_sklbp")
+icon = ExtResource("1_nydq3")
+name = "Iron Sword"
+type = "Weapon"
+Damage = 5.5
+description = "Just an ordiniary iron sword"

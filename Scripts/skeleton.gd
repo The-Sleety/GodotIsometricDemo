@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var anim = $"Animated Sprite"
-@onready var take_damage_timer = $TakeDamageTimer
 @onready var player = $"../Player"
 
 
@@ -18,7 +17,7 @@ var can_take_damage = true
 func _ready():
 	dead = false
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if !dead:
 		$DetectionArea/CollisionShape2D.disabled = false

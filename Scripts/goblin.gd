@@ -15,7 +15,7 @@ var player_in_area = false
 func _ready():
 	dead = false
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	if !dead:
 		$DetectionArea/CollisionShape2D.disabled = false

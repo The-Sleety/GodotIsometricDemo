@@ -1,38 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfg64b7smyyhn"]
+[gd_scene load_steps=9 format=3 uid="uid://cfg64b7smyyhn"]
 
 [ext_resource type="FontFile" uid="uid://dejs38nj1b5eg" path="res://Assets/DungeonFont.ttf" id="1_jho5m"]
 [ext_resource type="PackedScene" uid="uid://butwhrj2g3aky" path="res://normal.tscn" id="2_js4po"]
 [ext_resource type="PackedScene" uid="uid://lf4l0mdihsso" path="res://Scenes/Player.tscn" id="2_myhhu"]
 [ext_resource type="PackedScene" uid="uid://32p8gmqr53g1" path="res://Scenes/cspookyscaryskeleton.tscn" id="5_4loeh"]
 [ext_resource type="PackedScene" uid="uid://bh67k2k6ounrd" path="res://Scenes/goblin.tscn" id="5_5r1ps"]
+[ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="6_sh0g8"]
+[ext_resource type="Resource" uid="uid://b0dwgum16ecif" path="res://Resources/Items/IronSword.tres" id="7_yk2ii"]
+[ext_resource type="Resource" uid="uid://6yagul1grca4" path="res://Resources/Items/NormalBow.tres" id="8_8jquu"]
 
 [node name="WorldTest" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Healt" type="Label" parent="CanvasLayer"]
-offset_left = 38.0
-offset_top = 44.0
-offset_right = 147.0
-offset_bottom = 78.0
+offset_left = 29.0
+offset_top = 475.0
+offset_right = 138.0
+offset_bottom = 509.0
 theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
 text = "Health : "
 
 [node name="Speed" type="Label" parent="CanvasLayer"]
-offset_left = 38.0
-offset_top = 85.0
-offset_right = 147.0
-offset_bottom = 119.0
+offset_left = 29.0
+offset_top = 516.0
+offset_right = 138.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
 text = "Speed : "
 
 [node name="Stamina" type="Label" parent="CanvasLayer"]
-offset_left = 38.0
-offset_top = 125.0
-offset_right = 160.0
-offset_bottom = 159.0
+offset_left = 29.0
+offset_top = 556.0
+offset_right = 151.0
+offset_bottom = 590.0
 theme_override_fonts/font = ExtResource("1_jho5m")
 theme_override_font_sizes/font_size = 33
 text = "Stamina : "
@@ -51,3 +54,11 @@ position = Vector2(729, -403)
 
 [node name="Goblin" parent="." instance=ExtResource("5_5r1ps")]
 position = Vector2(232, -128)
+
+[node name="AbstractItem" parent="." instance=ExtResource("6_sh0g8")]
+position = Vector2(173, 7)
+stats = ExtResource("7_yk2ii")
+
+[node name="AbstractItem2" parent="." instance=ExtResource("6_sh0g8")]
+position = Vector2(-16, -68)
+stats = ExtResource("8_8jquu")
