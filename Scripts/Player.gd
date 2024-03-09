@@ -3,12 +3,12 @@ extends CharacterBody2D
 class_name Player
 
 @export_category("Texts and onreadies")
-@onready var healtText = $"../CanvasLayer/Healt"
+@onready var healtText = $"../CanvasLayer/DebugMenu/Healt"
 @onready var anim = $AnimationPlayer
 @onready var player_sprite = $Sprite2D
-@onready var speedText = $"../CanvasLayer/Speed"
+@onready var speedText = $"../CanvasLayer/DebugMenu/Speed"
 @onready var skeleton = $"../Skeleton"
-@onready var staminaText = $"../CanvasLayer/Stamina"
+@onready var staminaText = $"../CanvasLayer/DebugMenu/Stamina"
 @onready var hotbar = $UI/Hotbar
 
 @export var Item_obj : PackedScene

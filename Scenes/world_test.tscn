@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfg64b7smyyhn"]
+[gd_scene load_steps=10 format=3 uid="uid://cfg64b7smyyhn"]
 
-[ext_resource type="FontFile" uid="uid://dejs38nj1b5eg" path="res://Assets/DungeonFont.ttf" id="1_jho5m"]
+[ext_resource type="PackedScene" uid="uid://fgq3dsmgkrv4" path="res://Scenes/debug_menu.tscn" id="1_qeqqq"]
 [ext_resource type="PackedScene" uid="uid://butwhrj2g3aky" path="res://normal.tscn" id="2_js4po"]
 [ext_resource type="PackedScene" uid="uid://lf4l0mdihsso" path="res://Scenes/Player.tscn" id="2_myhhu"]
+[ext_resource type="FontFile" uid="uid://dy3gus6wal0k3" path="res://Assets/Early GameBoy.ttf" id="2_v2cfo"]
 [ext_resource type="PackedScene" uid="uid://32p8gmqr53g1" path="res://Scenes/cspookyscaryskeleton.tscn" id="5_4loeh"]
 [ext_resource type="PackedScene" uid="uid://bh67k2k6ounrd" path="res://Scenes/goblin.tscn" id="5_5r1ps"]
 [ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="6_sh0g8"]
@@ -13,30 +14,38 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Healt" type="Label" parent="CanvasLayer"]
-offset_left = 29.0
+[node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("1_qeqqq")]
+
+[node name="Healt" type="Label" parent="CanvasLayer/DebugMenu"]
+layout_mode = 0
+offset_left = 245.0
 offset_top = 475.0
-offset_right = 138.0
-offset_bottom = 509.0
-theme_override_fonts/font = ExtResource("1_jho5m")
+offset_right = 510.0
+offset_bottom = 517.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_v2cfo")
 theme_override_font_sizes/font_size = 33
 text = "Health : "
 
-[node name="Speed" type="Label" parent="CanvasLayer"]
-offset_left = 29.0
+[node name="Speed" type="Label" parent="CanvasLayer/DebugMenu"]
+layout_mode = 0
+offset_left = 245.0
 offset_top = 516.0
-offset_right = 138.0
-offset_bottom = 550.0
-theme_override_fonts/font = ExtResource("1_jho5m")
+offset_right = 477.0
+offset_bottom = 558.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_v2cfo")
 theme_override_font_sizes/font_size = 33
 text = "Speed : "
 
-[node name="Stamina" type="Label" parent="CanvasLayer"]
-offset_left = 29.0
+[node name="Stamina" type="Label" parent="CanvasLayer/DebugMenu"]
+layout_mode = 0
+offset_left = 245.0
 offset_top = 556.0
-offset_right = 151.0
-offset_bottom = 590.0
-theme_override_fonts/font = ExtResource("1_jho5m")
+offset_right = 543.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_v2cfo")
 theme_override_font_sizes/font_size = 33
 text = "Stamina : "
 

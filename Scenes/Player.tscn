@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cnddoxvttlwsp" path="res://Assets/Player/_side walk.png" id="4_jyvry"]
 [ext_resource type="Texture2D" uid="uid://blgxg014637so" path="res://Assets/stamina.png" id="5_gimwn"]
 [ext_resource type="Script" path="res://Scripts/Stamina.gd" id="5_hj1dj"]
+[ext_resource type="Script" path="res://Scripts/Protection.gd" id="7_c6opm"]
 [ext_resource type="Script" path="res://Scripts/inventory/Weapon.gd" id="7_fwu5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kvdi"]
@@ -281,10 +282,6 @@ _data = {
 "walk": SubResource("Animation_pg5jk")
 }
 
-[sub_resource type="Curve" id="Curve_sjjr8"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.340659), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 y_sort_enabled = true
@@ -321,6 +318,19 @@ texture_under = ExtResource("5_gimwn")
 texture_progress = ExtResource("5_gimwn")
 tint_under = Color(0.368627, 0.368627, 0.368627, 1)
 script = ExtResource("5_hj1dj")
+
+[node name="Protection" type="TextureProgressBar" parent="UI"]
+offset_left = 32.0
+offset_top = 109.0
+offset_right = 422.0
+offset_bottom = 130.0
+max_value = 1000.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("5_gimwn")
+texture_progress = ExtResource("5_gimwn")
+tint_under = Color(0.368627, 0.368627, 0.368627, 1)
+script = ExtResource("7_c6opm")
 
 [node name="Hotbar" type="HBoxContainer" parent="UI"]
 anchors_preset = 7
@@ -365,21 +375,6 @@ libraries = {
 "": SubResource("AnimationLibrary_6jqgk")
 }
 speed_scale = 0.6
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-z_index = 960
-amount = 200
-lifetime = 3.0
-speed_scale = 0.5
-emission_shape = 3
-emission_rect_extents = Vector2(1280, 720)
-spread = 10.0
-gravity = Vector2(0, 10)
-initial_velocity_min = 50.0
-initial_velocity_max = 70.0
-scale_amount_min = 0.5
-scale_amount_max = 2.0
-scale_amount_curve = SubResource("Curve_sjjr8")
 
 [node name="Weapon" type="Node2D" parent="."]
 script = ExtResource("7_fwu5d")

@@ -1,0 +1,359 @@
+[gd_scene load_steps=3 format=3 uid="uid://fgq3dsmgkrv4"]
+
+[ext_resource type="Script" path="res://Scripts/debug_menu.gd" id="1_rakpq"]
+[ext_resource type="FontFile" uid="uid://dy3gus6wal0k3" path="res://Assets/Early GameBoy.ttf" id="1_td1ha"]
+
+[node name="DebugMenu" type="Control"]
+visible = false
+z_index = 2790
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rakpq")
+
+[node name="DebugMain" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top" type="MarginContainer" parent="DebugMain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 52.0
+offset_right = 1026.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="DebugMain/Top"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugMain/Top"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugMain/Top/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="DebugTitle" type="Label" parent="DebugMain/Top/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "DEBUG MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DebugTitle2" type="Label" parent="DebugMain/Top/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "dev menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DebugMain/Top/VBoxContainer"]
+layout_mode = 2
+
+[node name="endinge" type="Label" parent="DebugMain/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "sleety's isometric  engine v0.34"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="date" type="Label" parent="DebugMain/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "03.10.2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="MarginContainer" parent="DebugMain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 204.0
+offset_right = 1026.0
+offset_bottom = 429.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="DebugMain/Bottom"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugMain/Bottom"]
+layout_mode = 2
+alignment = 1
+
+[node name="resume" type="Button" parent="DebugMain/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "resume"
+flat = true
+
+[node name="restart" type="Button" parent="DebugMain/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "restart"
+flat = true
+
+[node name="sceneSelect" type="Button" parent="DebugMain/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "scene select"
+flat = true
+
+[node name="options" type="Button" parent="DebugMain/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "options"
+flat = true
+
+[node name="exit" type="Button" parent="DebugMain/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "exit"
+flat = true
+
+[node name="Options" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top" type="MarginContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 52.0
+offset_right = 1026.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="Options/Top"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Top"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Top/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="DebugTitle" type="Label" parent="Options/Top/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "OPtions MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Options/Top/VBoxContainer"]
+layout_mode = 2
+
+[node name="endinge" type="Label" parent="Options/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "sleety's isometric  engine v0.34"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="date" type="Label" parent="Options/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "03.10.2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="MarginContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 204.0
+offset_right = 1026.0
+offset_bottom = 429.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="Options/Bottom"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Bottom"]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="Options/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+flat = true
+
+[node name="Scene Select" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top" type="MarginContainer" parent="Scene Select"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 52.0
+offset_right = 1026.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="Scene Select/Top"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene Select/Top"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene Select/Top/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="DebugTitle" type="Label" parent="Scene Select/Top/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "Scene select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Scene Select/Top/VBoxContainer"]
+layout_mode = 2
+
+[node name="endinge" type="Label" parent="Scene Select/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "sleety's isometric  engine v0.34"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="date" type="Label" parent="Scene Select/Top/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 16
+text = "03.10.2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="MarginContainer" parent="Scene Select"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 204.0
+offset_right = 1026.0
+offset_bottom = 429.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg1" type="ColorRect" parent="Scene Select/Bottom"]
+layout_mode = 2
+color = Color(0, 0, 0.501961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene Select/Bottom"]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="Scene Select/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="DebugMain/Bottom/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="DebugMain/Bottom/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="DebugMain/Bottom/VBoxContainer/sceneSelect" to="." method="_on_scene_select_pressed"]
+[connection signal="pressed" from="DebugMain/Bottom/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="DebugMain/Bottom/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Bottom/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Scene Select/Bottom/VBoxContainer/Back" to="." method="_on_back_pressed"]
