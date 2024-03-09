@@ -1,6 +1,6 @@
 # GodotIsometricDemo
 
-##TO-DO
+## TO-DO
 
 - [ ] Make your own sprites / textures for the game
 - [x] Hotbar / Items (Custom Resources)
