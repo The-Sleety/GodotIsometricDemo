@@ -3,7 +3,7 @@
 ##TO-DO
 
 - Make your own sprites / textures for the game
-- Hotbar / Items (Custom Resources)
+- --Hotbar / Items (Custom Resources)--
 - Dungeon Generation
 - More enemies (Goblins etc.)
 - Teleporter Maybe...
