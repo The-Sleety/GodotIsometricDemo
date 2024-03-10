@@ -51,13 +51,19 @@ func _process(_delta):
 func _physics_process(_delta):
 	get_input()
 	
+	if can_move == false:
+		velocity = Vector2(0, 0)
+	else:
+		can_move = true
+	
 	if healt <= 0:
 		can_move = false
 		die()
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed 
+	if can_move:
+		velocity = input_direction * speed 
 	
 	#runnning
 	if can_run and Input.is_action_pressed("run"):

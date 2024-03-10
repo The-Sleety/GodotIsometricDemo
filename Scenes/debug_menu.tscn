@@ -244,6 +244,28 @@ color = Color(0, 0, 0.501961, 1)
 layout_mode = 2
 alignment = 1
 
+[node name="Audio Options" type="Button" parent="Options/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "Audio options"
+flat = true
+
+[node name="Audio Options2" type="Button" parent="Options/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "video options"
+flat = true
+
 [node name="Back" type="Button" parent="Options/Bottom/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -338,6 +360,41 @@ color = Color(0, 0, 0.501961, 1)
 [node name="VBoxContainer" type="VBoxContainer" parent="Scene Select/Bottom"]
 layout_mode = 2
 alignment = 1
+
+[node name="Menus" type="Button" parent="Scene Select/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "MENus
+"
+flat = true
+
+[node name="Dungeons" type="Button" parent="Scene Select/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "Maps
+"
+flat = true
+
+[node name="Extras" type="Button" parent="Scene Select/Bottom/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.572549, 0.572549, 0.572549, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("1_td1ha")
+theme_override_font_sizes/font_size = 24
+text = "extras"
+flat = true
 
 [node name="Back" type="Button" parent="Scene Select/Bottom/VBoxContainer"]
 layout_mode = 2
