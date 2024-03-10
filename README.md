@@ -8,7 +8,7 @@
 - [ ] More enemies (Goblins etc.)
 - [ ] Teleporter Maybe...
 - [ ] Gui elements
-- [ ] Debug menu
+- [x] Debug menu
 
 ## Bugs
 
