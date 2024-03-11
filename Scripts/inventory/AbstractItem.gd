@@ -12,10 +12,11 @@ func _ready():
 			texture = stats.icon
 
 func _on_player_entered(body):
-	call_deferred("reparent", body.find_child("Weapon"))
-	position = body.position
-	body.add_item(stats, skill)
-	collision.call_deferred("set_disabled", true)
-	self.hide()
+	if body.name == "Player":
+		call_deferred("reparent", body.find_child("Weapon"))
+		position = body.position
+		body.add_item(stats, skill)
+		collision.call_deferred("set_disabled", true)
+		self.hide()
 
 
