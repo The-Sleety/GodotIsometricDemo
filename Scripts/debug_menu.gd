@@ -4,17 +4,14 @@ extends Control
 @onready var debug_main = $DebugMain
 @onready var options = $Options
 @onready var scene_select = $"Scene Select"
-@onready var player = $"../../Player"
+@onready var scene_bottom = $"Scene Select/Bottom"
+@onready var menus_select = $"Scene Select/MenusSelect"
 
 
 func _process(_delta):
 	if Input.is_action_just_pressed("drop"):
 		debug_menu.visible = !debug_menu.visible
-		if debug_menu.visible == true:
-			player.can_move = false
-		else:
-			player.can_move = true
-			
+
 
 func _on_options_pressed():
 	debug_main.visible = false
@@ -42,3 +39,12 @@ func _on_resume_pressed():
 
 
 
+#scene select
+
+func _on_menus_pressed():
+	scene_bottom.visible = false
+	menus_select.visible = true
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")

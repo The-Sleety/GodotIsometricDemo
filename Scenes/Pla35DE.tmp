@@ -294,7 +294,6 @@ baseDamage = 3.5
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Health" type="TextureProgressBar" parent="UI"]
-z_index = -1
 offset_left = 31.0
 offset_top = 17.0
 offset_right = 421.0
@@ -308,7 +307,6 @@ tint_under = Color(0.368627, 0.368627, 0.368627, 1)
 script = ExtResource("3_ibb3l")
 
 [node name="Stamina" type="TextureProgressBar" parent="UI"]
-z_index = -1
 offset_left = 32.0
 offset_top = 61.0
 offset_right = 422.0
@@ -322,7 +320,6 @@ tint_under = Color(0.368627, 0.368627, 0.368627, 1)
 script = ExtResource("5_hj1dj")
 
 [node name="Protection" type="TextureProgressBar" parent="UI"]
-z_index = -1
 offset_left = 32.0
 offset_top = 109.0
 offset_right = 422.0

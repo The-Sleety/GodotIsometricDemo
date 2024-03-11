@@ -43,9 +43,10 @@ func _ready():
 	anim.play("idle")
 
 func _process(_delta):
-	healtText.text = "Healt : " + str(healt)
-	speedText.text = "Speed : " + str(speed)
-	staminaText.text = "Stamina : " + str(stamina)
+	pass
+	#healtText.text = "Healt : " + str(healt)
+	#speedText.text = "Speed : " + str(speed)
+	#staminaText.text = "Stamina : " + str(stamina)
 	
 
 func _physics_process(_delta):

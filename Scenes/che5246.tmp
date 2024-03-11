@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://pmkx3iqrtnxc"]
+
+[ext_resource type="Texture2D" uid="uid://beoxn2nwhs2dl" path="res://Assets/chest Template.png" id="1_37snw"]
+[ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="2_n2gke"]
+
+[sub_resource type="GDScript" id="GDScript_dhxvw"]
+script/source = "extends StaticBody2D
+
+@onready var detect_area = $\"detect Area\"
+@onready var anim = $AnimatedSprite2D
+
+
+func _ready():
+	anim.play(\"unopened\")
+	
+
+
+func _on_detect_area_body_entered(body):
+	if body.name == \"Player\":
+		anim.play(\"opened\")
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ifok"]
+atlas = ExtResource("1_37snw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7giv"]
+atlas = ExtResource("1_37snw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ifok")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7giv")
+}],
+"loop": true,
+"name": &"unopened",
+"speed": 5.0
+}]
+
+[node name="Chest" type="StaticBody2D"]
+script = SubResource("GDScript_dhxvw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sv5fn")
+animation = &"opened"
+
+[node name="AbstractItem" parent="." instance=ExtResource("2_n2gke")]
+
+[node name="detect Area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="detect Area"]
+polygon = PackedVector2Array(0, 32, -48, 8, 0, -16, 48, 8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(0, 16, 16, 8, 16, -2, 0, -10, -16, -2, 0, 5, 0, 15, -16, 8, -16, 8)
+
+[connection signal="body_entered" from="detect Area" to="." method="_on_detect_area_body_entered"]

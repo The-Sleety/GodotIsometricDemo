@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfg64b7smyyhn"]
+[gd_scene load_steps=11 format=3 uid="uid://cfg64b7smyyhn"]
 
-[ext_resource type="PackedScene" uid="uid://fgq3dsmgkrv4" path="res://Scenes/debug_menu.tscn" id="1_qeqqq"]
+[ext_resource type="PackedScene" uid="uid://j8gqsndql5ai" path="res://Scenes/debug_menu.tscn" id="1_qeqqq"]
 [ext_resource type="PackedScene" uid="uid://butwhrj2g3aky" path="res://normal.tscn" id="2_js4po"]
 [ext_resource type="PackedScene" uid="uid://lf4l0mdihsso" path="res://Scenes/Player.tscn" id="2_myhhu"]
 [ext_resource type="FontFile" uid="uid://dy3gus6wal0k3" path="res://Assets/Early GameBoy.ttf" id="2_v2cfo"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="6_sh0g8"]
 [ext_resource type="Resource" uid="uid://b0dwgum16ecif" path="res://Resources/Items/IronSword.tres" id="7_yk2ii"]
 [ext_resource type="Resource" uid="uid://6yagul1grca4" path="res://Resources/Items/NormalBow.tres" id="8_8jquu"]
+[ext_resource type="PackedScene" uid="uid://pmkx3iqrtnxc" path="res://Scenes/chest.tscn" id="10_jh3b7"]
 
 [node name="WorldTest" type="Node2D"]
 
@@ -50,7 +51,6 @@ theme_override_font_sizes/font_size = 33
 text = "Stamina : "
 
 [node name="TileMap" parent="." instance=ExtResource("2_js4po")]
-visible = true
 
 [node name="Player" parent="." instance=ExtResource("2_myhhu")]
 protection = 10.0
@@ -71,3 +71,6 @@ stats = ExtResource("7_yk2ii")
 [node name="AbstractItem2" parent="." instance=ExtResource("6_sh0g8")]
 position = Vector2(-16, -68)
 stats = ExtResource("8_8jquu")
+
+[node name="Chest" parent="." instance=ExtResource("10_jh3b7")]
+position = Vector2(-80, -96)
