@@ -1,5 +1,7 @@
 extends Sprite2D
 
+class_name abstractItem
+
 @onready var collision = $Area2D/CollisionShape2D
 
 @export var stats : Item

@@ -283,7 +283,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_e55tr")
