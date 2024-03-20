@@ -1,5 +1,7 @@
 extends HBoxContainer
- 
+
+var is_selected = false
+
 @onready var slots = get_children()
 signal index(i: int)
  
@@ -20,6 +22,7 @@ func set_focus():
 	get_child(current_index).grab_focus()
 	get_child(current_index).set_process_input(true)
 	index.emit(current_index)
+
  
 func _input(event):
 	if event.is_action_pressed("scroll_down"):

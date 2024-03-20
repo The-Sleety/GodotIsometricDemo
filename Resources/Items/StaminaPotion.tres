@@ -8,5 +8,6 @@ script = ExtResource("1_jauxg")
 icon = ExtResource("1_10flv")
 name = "Stamina Potion"
 type = "Consumable"
-restoreHealt = 1.0
+restore = 10
+damage = 0.0
 description = "Restores your stamina"

@@ -7,8 +7,8 @@ class_name Item
 @export_enum("Weapon", "Consumable", "Armor") 
 var type = "Weapon"
 
-@export var restoreHealt : float
-
+@export var restore : int
+@export var damage: float
  
 @export_multiline var description: String
  

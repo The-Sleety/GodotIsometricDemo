@@ -26,6 +26,7 @@ class_name Player
 @export var maxProtection : float = 100
 @export var protection : float = 0
 @export var baseDamage  : float = 5.5
+var damage : float
 var is_dead = false
 var can_move = true
 var is_running : bool = false
@@ -41,13 +42,6 @@ var input = Vector2.ZERO
 
 func _ready():
 	anim.play("idle")
-
-func _process(_delta):
-	pass
-	#healtText.text = "Healt : " + str(healt)
-	#speedText.text = "Speed : " + str(speed)
-	#staminaText.text = "Stamina : " + str(stamina)
-	
 
 func _physics_process(_delta):
 	get_input()
@@ -103,6 +97,9 @@ func get_input():
 
 func add_item(stats,skill):
 	hotbar.add_item(stats,skill)
+	
+func use_item(skill, stats):
+	pass
 
 func die():
 	healt  = 0

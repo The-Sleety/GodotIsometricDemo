@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://lf4l0mdihsso"]
+[gd_scene load_steps=22 format=3 uid="uid://lf4l0mdihsso"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_e55tr"]
 [ext_resource type="Script" path="res://Scripts/inventory/Hotbar.gd" id="2_5t7gn"]
 [ext_resource type="Texture2D" uid="uid://dqv11gu57ws4e" path="res://Assets/Player/_side idle.png" id="2_lxhyq"]
 [ext_resource type="PackedScene" uid="uid://dcdbjj73c24ss" path="res://Scenes/Inv/slot.tscn" id="2_o2di2"]
 [ext_resource type="PackedScene" uid="uid://ufngcydl0hm6" path="res://Scenes/Inv/abstract_item.tscn" id="2_tgoj4"]
+[ext_resource type="Texture2D" uid="uid://cxlxk5l0yings" path="res://Assets/ui.png" id="3_fkwsp"]
 [ext_resource type="Texture2D" uid="uid://ddl4ffm0l87sq" path="res://Assets/healtProgress.png" id="3_gqb2j"]
 [ext_resource type="Script" path="res://Scripts/Health.gd" id="3_ibb3l"]
 [ext_resource type="Texture2D" uid="uid://bq7sefpxtxwnm" path="res://Assets/Player/_side attack.png" id="4_1wpn6"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/Stamina.gd" id="5_hj1dj"]
 [ext_resource type="Script" path="res://Scripts/Protection.gd" id="7_c6opm"]
 [ext_resource type="Script" path="res://Scripts/inventory/Weapon.gd" id="7_fwu5d"]
+[ext_resource type="Texture2D" uid="uid://dm2ddu75ysue6" path="res://Assets/protection.png" id="7_u01oi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kvdi"]
 size = Vector2(9.33333, 5.33332)
@@ -293,26 +295,17 @@ baseDamage = 3.5
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Health" type="TextureProgressBar" parent="UI"]
-z_index = -1
-offset_left = 31.0
-offset_top = 17.0
-offset_right = 421.0
-offset_bottom = 38.0
-max_value = 1000.0
-rounded = true
-nine_patch_stretch = true
-texture_under = ExtResource("3_gqb2j")
-texture_progress = ExtResource("3_gqb2j")
-tint_under = Color(0.368627, 0.368627, 0.368627, 1)
-script = ExtResource("3_ibb3l")
+[node name="Ui" type="Sprite2D" parent="UI"]
+position = Vector2(204, 96)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_fkwsp")
 
-[node name="Stamina" type="TextureProgressBar" parent="UI"]
+[node name="Stamina" type="TextureProgressBar" parent="UI/Ui"]
 z_index = -1
-offset_left = 32.0
-offset_top = 61.0
-offset_right = 422.0
-offset_bottom = 82.0
+offset_left = -36.0
+offset_top = 21.0
+offset_right = 26.0
+offset_bottom = 26.0
 max_value = 1000.0
 rounded = true
 nine_patch_stretch = true
@@ -321,17 +314,31 @@ texture_progress = ExtResource("5_gimwn")
 tint_under = Color(0.368627, 0.368627, 0.368627, 1)
 script = ExtResource("5_hj1dj")
 
-[node name="Protection" type="TextureProgressBar" parent="UI"]
+[node name="Health" type="TextureProgressBar" parent="UI/Ui"]
 z_index = -1
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 422.0
-offset_bottom = 130.0
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 39.0
+offset_bottom = -7.0
 max_value = 1000.0
 rounded = true
 nine_patch_stretch = true
-texture_under = ExtResource("5_gimwn")
-texture_progress = ExtResource("5_gimwn")
+texture_under = ExtResource("3_gqb2j")
+texture_progress = ExtResource("3_gqb2j")
+tint_under = Color(0.368627, 0.368627, 0.368627, 1)
+script = ExtResource("3_ibb3l")
+
+[node name="Protection" type="TextureProgressBar" parent="UI/Ui"]
+z_index = -1
+offset_left = -9.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 4.0
+max_value = 1000.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("7_u01oi")
+texture_progress = ExtResource("7_u01oi")
 tint_under = Color(0.368627, 0.368627, 0.368627, 1)
 script = ExtResource("7_c6opm")
 
