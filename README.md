@@ -5,13 +5,14 @@ this is a project i started at 5th or march 2024.  I started it because i tought
 
 ## TO-DO
 
-- [ ] Make your own sprites / textures for the game
+- [ ] Make my own sprites / textures for the game
 - [x] Hotbar / Items (Custom Resources)
 - [ ] Dungeon Generation
 - [ ] More enemies (Goblins etc.)
 - [ ] Teleporter Maybe...
 - [ ] Gui elements
-- [ ] Combat system
+- [ ] Combat system (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
+- [ ] Boss fights (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
 - [x] Debug menu
 
 ## Bugs
