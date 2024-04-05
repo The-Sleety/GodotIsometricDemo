@@ -7,8 +7,8 @@ this is a project i started at 5th or march 2024.  I started it because i tought
 
 - [ ] Make my own sprites / textures for the game
 - [x] Hotbar / Items (Custom Resources)
-- [ ] Dungeon Generation
-- [ ] More enemies (Goblins etc.)
+- [x] Dungeon Generation
+- [x] More enemies (Goblins etc.)
 - [ ] Teleporter Maybe...
 - [ ] Gui elements
 - [ ] Combat system (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
