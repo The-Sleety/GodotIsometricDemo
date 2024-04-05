@@ -11,8 +11,8 @@ this is a project i started at 5th or march 2024.  I started it because i tought
 - [x] More enemies (Goblins etc.)
 - [ ] Teleporter Maybe...
 - [ ] Gui elements
-- [ ] Inventory System wşth usable items.
-- [ ] Combat system (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
+- [ ] Inventory System with usable items.(https://youtu.be/E-GgHGJANkc?si=LZLfsbLPys--3c9f)
+- [x] Combat system (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
 - [ ] Boss fights (https://www.youtube.com/watch?v=oY5GBcd-gcQ)
 - [x] Debug menu
 
